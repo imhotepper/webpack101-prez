@@ -4,7 +4,10 @@ This is the starting point for the [webpack101](https://slides.com/imhotepp/webp
 
 Steps to convert from no webpack to webpack4:
 1. make sure you have node 10+ installed (use [nvm](https://github.com/nvm-sh/nvm) for easy install & switch from version to version).
-2. Create an `src` folder and copy all existing files and folders inside, except the readme.md.
+2. Create an `src` folder and copy all existing files and folders inside, except the readme.md. Edit every `[filename].html` and remove or comment from head the stylesheets link:
+```html
+   <!-- <link rel="stylesheet" href="css/styles.css" /> -->
+```
 3. Install webpack dev server, webpack, webpack-cli
 ```
 yarn add -D webpack webpack-cli webpack-dev-server
@@ -27,7 +30,7 @@ module.exports = {
 
 6. Create the file `./src/index.js` with content:
 ```js
-import './src/css/styles.css'
+import './css/styles.css'
 ```
 7. Install modules css-loader and style-loader:
 ```
@@ -100,18 +103,33 @@ const search = async(ev) => {
 export { search }
 
 ```
-11. Update the `webpack.config.js` and add above rules the output:
+11. Edit `./src/index.js` and add the following lines:
+```js
+import { search } from './js/search'
+
+export { serach }
+```
+
+12. Update the `webpack.config.js` and add above rules the output:
 ```js
  output: {
         libraryTarget: 'var',
         library: 'client'
     },
 ```
-12. test the configurations buy running:
+13. Edit file `./src/index.html` and update the form tag as from:
+```html
+<form action="">
+```
+to
+```html
+<form action="" onsubmit="client.search(event)">
+```
+14. test the configurations buy running:
 ```cmd
 yarn dev
 ```
-It should start the webside with the files bundled through webpack.
+It should start the webside with the files bundled through webpack and search function available.
 
 
 
