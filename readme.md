@@ -1,117 +1,23 @@
 # From HTML to Webpack 4 : starter blog website
 
-This is the starting point for the [webpack101](https://slides.com/imhotepp/webpack101/live) prezentation.
+This is the development configuration ready for the [webpack101](https://slides.com/imhotepp/webpack101/live) prezentation.
 
-Steps to convert from no webpack to webpack4:
-1. make sure you have node 10+ installed (use [nvm](https://github.com/nvm-sh/nvm) for easy install & switch from version to version).
-2. Create an `src` folder and copy all existing files and folders inside.
-3. Install webpack dev server, webpack, webpack-cli
+
+To run this version of the webpack transformation use the following commands once you have node 10+ available:
+
+1. Install dependencies
+```cmd
+yarn
 ```
-yarn add -D webpack webpack-cli webpack-dev-server
-```
-4. Update `package.json` as follows:
-```js
- "scripts": {
-        "dev": "webpack-dev-server --open --port 3030"
-    },
-```
-5. Create `webpack.config.js` in the root folder and update it:
-```js
-const path = require("path");
+2. start the dev server:
 
-module.exports = {
-
-
-}
-```
-
-6. Create the file `./src/index.js` with content:
-```js
-import './src/css/styles.css
-```
-7. Install modules css-loader and style-loader:
-```
-yarn add -D style-loader css-loader
-```
-and update the `webpack.config.js`:
-```js
-module: {
-        rules: [{
-            test: /\.css$/,
-            use: [MiniCssExtractPlugin.loader, // instead of style-loader
-		 "css-loader"]
-        }]
-    },
-
-```
-
-8. Install plugins:
-```
-yarn add -D  copy-webpack-plugin  html-webpack-plugin mini-css-extract-plugin
-
-```
-9. Update `webpack.config.js` with the imports:
-
-```js
-
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-```
-
-and add the plugins after rules:
-```js
- plugins: [
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: path.resolve(__dirname, "src", "index.html")
-        }),
-
-        new HtmlWebpackPlugin({
-            filename: 'about.html',
-            template: path.resolve(__dirname, "src", "about.html")
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'blog-post.html',
-            template: path.resolve(__dirname, "src", "blog-post.html")
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'contact.html',
-            template: path.resolve(__dirname, "src", "contact.html")
-        }),
-        new CopyPlugin({
-            patterns: [
-                { from: 'src/img', to: 'img' },
-
-            ],
-        }),
-  new MiniCssExtractPlugin(),
-
-]
-````
-10. Create a folder and a file `./src/js/search.js` with the content:
-```js
-const search = async(ev) => {
-    ev.preventDefault();
-    alert('searching....');
-}
-
-export { search }
-
-```
-11. Update the `webpack.config.js` and add above rules the output:
-```js
- output: {
-        libraryTarget: 'var',
-        library: 'client'
-    },
-```
-12. test the configurations buy running:
 ```cmd
 yarn dev
 ```
-It should start the webside with the files bundled through webpack.
+
+
+
+It should start the webside with the files bundled through webpack but not ready for Production.
 
 
 
