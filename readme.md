@@ -27,7 +27,7 @@ module.exports = {
 
 6. Create the file `./src/index.js` with content:
 ```js
-import './src/css/styles.css
+import './src/css/styles.css'
 ```
 7. Install modules css-loader and style-loader:
 ```
