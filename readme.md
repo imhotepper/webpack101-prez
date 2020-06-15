@@ -4,7 +4,7 @@ This is the starting point for the [webpack101](https://slides.com/imhotepp/webp
 
 Steps to convert from no webpack to webpack4:
 1. make sure you have node 10+ installed (use [nvm](https://github.com/nvm-sh/nvm) for easy install & switch from version to version).
-2. Create an `src` folder and copy all existing files and folders inside.
+2. Create an `src` folder and copy all existing files and folders inside, except the readme.md.
 3. Install webpack dev server, webpack, webpack-cli
 ```
 yarn add -D webpack webpack-cli webpack-dev-server
