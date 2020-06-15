@@ -1,0 +1,29 @@
+aside a:hover,
+.content a:hover {
+    background-color: #f7f7f7;
+}
+
+aside {
+    grid-area: sd;
+    margin: 10px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+aside input {
+    border: 1px solid #ddd;
+    padding: 0.7em;
+    font-size: .8em;
+}
+
+aside ul {
+    padding-left: 0px;
+}
+
+aside li {
+    list-style: none;
+}
+
+aside li a:hover {
+    border-bottom: 1px dashed #808080;
+}

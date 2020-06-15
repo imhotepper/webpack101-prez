@@ -1,0 +1,27 @@
+.card {
+    background-color: #f7f7f7;
+    margin-top: 60px;
+    padding: 20px;
+    font-size: .8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-img {
+    height: 100px;
+}
+
+.entry-title {
+    margin-bottom: 50px;
+}
+
+.blog-post-img {
+    width: 100%;
+}
+
+@media(min-width:600px) {
+    .card {
+        flex-direction: row;
+    }
+}

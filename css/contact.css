@@ -1,0 +1,30 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    grid-area: mm;
+    font-size: .9em;
+}
+
+.form input {
+    border: 1px solid #ddd;
+    padding: 0.7em;
+    font-size: 1em;
+    margin-top: .4em;
+    width: 300px;
+}
+
+.form textarea {
+    border: 1px solid #ddd;
+    padding: 0.7em;
+    font-size: 1em;
+    width: 300px;
+}
+
+@media(min-width:600px) {
+    .form input {
+        width: 80%;
+    }
+    .form textarea {
+        width: 80%;
+    }
+}
