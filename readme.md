@@ -1,4 +1,4 @@
-# Starter blog website
+# From HTML to Webpack 4 : starter blog website
 
 This is the starting point for the [webpack101](https://slides.com/imhotepp/webpack101/live) prezentation.
 
