@@ -107,7 +107,7 @@ export { search }
 ```js
 import { search } from './js/search'
 
-export { serach }
+export { search }
 ```
 
 12. Update the `webpack.config.js` and add above rules the output:
